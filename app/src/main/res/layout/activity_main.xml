@@ -21,6 +21,21 @@
                 android:text="Inserisci qui i tuoi dati"
                 android:textSize="30dp" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ERRORE!"
+                android:id="@+id/errorText"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:background="@color/red"
+                android:textColor="@color/white"
+                android:visibility="gone"/>
+
                 <Space
                     android:layout_width="match_parent"
                     android:layout_height="10dp" />
@@ -60,7 +75,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Nome:"
+                    android:text="Data:"
                     android:textSize="22dp" />
 
                 <EditText

@@ -9,11 +9,12 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 
 public class ResultActivity extends AppCompatActivity {
 
     Persona persona;
-    TextView nomeText, cognomeText, dataText,indirizzoText;
+    TextView nomeText, cognomeText, dataText,indirizzoText,ageText;
     Button ok;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,7 @@ public class ResultActivity extends AppCompatActivity {
         cognomeText = findViewById(R.id.TitleCogn);
         dataText = findViewById(R.id.TitleData);
         indirizzoText = findViewById(R.id.TitleIndirizzo);
+        ageText = findViewById(R.id.TitleAge);
         ok = findViewById(R.id.Return);
 
         Intent intent = getIntent();
@@ -38,13 +40,17 @@ public class ResultActivity extends AppCompatActivity {
 
         nomeText.setText(persona.getNome());
         cognomeText.setText(persona.getCognome());
-        dataText.setText(persona.getDataDiNascita());
+        indirizzoText.setText(persona.getIndirizzo());
+        ageText.setText(String.valueOf(persona.getEta()));
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/YYYY");
+        dataText.setText(format.format(persona.getDataDiNascita().getTime()));
 
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent goBack = new Intent(ResultActivity.this,MainActivity.class);
-                startActivity(goBack);
+                //Intent goBack = new Intent(ResultActivity.this,MainActivity.class);
+                //startActivity(goBack);
+                finish();
             }
         });
     }

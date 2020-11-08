@@ -1,23 +1,36 @@
 package com.example.esercitazione2;
 
 import java.io.Serializable;
+import java.util.Calendar;
 
 public class Persona implements Serializable {
 
-    private String nome, cognome, dataDiNascita, indirizzo;
+    private String nome, cognome, indirizzo;
+
+    private Calendar dataDiNascita;
+
+    private int eta;
 
     public Persona(){
         this.nome="";
         this.cognome="";
-        this.dataDiNascita="";
         this.indirizzo="";
+        this.eta=0;
     }
 
-    public Persona(String nome, String cognome, String dataDiNascita, String indirizzo){
+    public Persona(String nome, String cognome, String dataDiNascita, String indirizzo,int eta){
         this.nome=nome;
         this.cognome=cognome;
-        this.dataDiNascita=dataDiNascita;
         this.indirizzo=indirizzo;
+        this.eta=eta;
+    }
+
+    public int getEta() {
+        return eta;
+    }
+
+    public void setEta(int eta) {
+        this.eta = eta;
     }
 
     public String getIndirizzo() {
@@ -44,11 +57,12 @@ public class Persona implements Serializable {
         this.cognome = cognome;
     }
 
-    public String getDataDiNascita() {
+    public void setDataDiNascita(Calendar dataDiNascita) {
+        this.dataDiNascita = dataDiNascita;
+    }
+
+    public Calendar getDataDiNascita() {
         return dataDiNascita;
     }
 
-    public void setDataDiNascita(String dataDiNascita) {
-        this.dataDiNascita = dataDiNascita;
-    }
 }
