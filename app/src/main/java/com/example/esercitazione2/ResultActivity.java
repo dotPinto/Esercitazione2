@@ -40,7 +40,7 @@ public class ResultActivity extends AppCompatActivity {
 
         nomeText.setText(persona.getNome());
         cognomeText.setText(persona.getCognome());
-        indirizzoText.setText(persona.getIndirizzo());
+        indirizzoText.setText(persona.getCap());
         ageText.setText(String.valueOf(persona.getEta()));
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/YYYY");
         dataText.setText(format.format(persona.getDataDiNascita().getTime()));

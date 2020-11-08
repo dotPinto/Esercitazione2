@@ -5,7 +5,7 @@ import java.util.Calendar;
 
 public class Persona implements Serializable {
 
-    private String nome, cognome, indirizzo;
+    private String nome, cognome, cap;
 
     private Calendar dataDiNascita;
 
@@ -14,14 +14,14 @@ public class Persona implements Serializable {
     public Persona(){
         this.nome="";
         this.cognome="";
-        this.indirizzo="";
+        this.cap="";
         this.eta=0;
     }
 
-    public Persona(String nome, String cognome, String dataDiNascita, String indirizzo,int eta){
+    public Persona(String nome, String cognome, String dataDiNascita, String cap, int eta){
         this.nome=nome;
         this.cognome=cognome;
-        this.indirizzo=indirizzo;
+        this.cap = cap;
         this.eta=eta;
     }
 
@@ -33,12 +33,12 @@ public class Persona implements Serializable {
         this.eta = eta;
     }
 
-    public String getIndirizzo() {
-        return indirizzo;
+    public String getCap() {
+        return cap;
     }
 
-    public void setIndirizzo(String indirizzo) {
-        this.indirizzo = indirizzo;
+    public void setCap(String cap) {
+        this.cap = cap;
     }
 
     public String getNome() {
